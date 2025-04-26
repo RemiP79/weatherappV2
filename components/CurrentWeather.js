@@ -29,20 +29,11 @@
     }
 
     return (
-      <View style={styles.container}>
-        {/* Ville */}
-        <Text style={styles.cityText}>{currentWeather.city}</Text>
-
-        {/* Jour */}
-        <Text style={styles.dayText}>{currentWeather.day}</Text>
-
-        {/* Icône */}
-        <ShowIcon icon={currentWeather.icon} resolution="4x" size={100} />
-
-        {/* Température */}
-        <Text style={styles.temperatureText}>{`${currentWeather.temperature}°C`}</Text>
-
-        {/* Description */}
+      <View style={styles.container}>        
+        <Text style={styles.cityText}>{currentWeather.city}</Text>        
+        <Text style={styles.dayText}>{currentWeather.day}</Text>        
+        <ShowIcon icon={currentWeather.icon} resolution="4x" size={100} />       
+        <Text style={styles.temperatureText}>{`${currentWeather.temperature}°C`}</Text>        
         <Text style={styles.descriptionText}>{currentWeather.description}</Text>
       </View>
     );
