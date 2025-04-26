@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './components/HomeScreen'; // Assurez-vous que le chemin est correct
-import CurrentWeatherScreen from './components/CurrentWeatherScreen'; // Assurez-vous que le chemin est correct
+import HomeScreen from './components/HomeScreen'; 
+import CurrentWeatherScreen from './components/CurrentWeatherScreen'; 
 import SearchBar from './components/SearchBar';
 import SearchScreen from './components/SearchScreen';
-
+import RainForecastScreen from './components/RainForecastScreen';
 const Tab = createBottomTabNavigator();
 
 const App = () => {
@@ -17,11 +17,12 @@ const App = () => {
     <NavigationContainer>
       <Tab.Navigator>        
         <Tab.Screen
-          name="CurrentWeather"
+          name="Accueil"
           component={CurrentWeatherScreen}
-        />         
-        <Tab.Screen name="Accueil" component={HomeScreen} />
+        />                 
         <Tab.Screen name="chercher ma ville" component={SearchScreen} />
+        <Tab.Screen name="Prévisions de pluie" component={RainForecastScreen} />
+        
       </Tab.Navigator>
     </NavigationContainer>
   );
