@@ -1,4 +1,49 @@
+// App.js
 import React, { useState, useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import * as Location from 'expo-location';
+import axios from 'axios';
+import HomeScreen from './components/HomeScreen'; // Assurez-vous que le chemin est correct
+import CurrentWeatherScreen from './components/CurrentWeatherScreen'; // Assurez-vous que le chemin est correct
+//import RainForecastScreen from './components/RainForecastScreen';
+//import BurgerMenu from './components/BurgerMenu';
+import { Provider as PaperProvider } from 'react-native-paper';
+import BurgerMenu from './components/BurgerMenu'; // Composant du menu burger
+
+
+const Tab = createBottomTabNavigator();
+
+const App = () => {
+
+
+  return (
+    <PaperProvider>
+    <BurgerMenu />
+  </PaperProvider>
+      
+    /*<NavigationContainer>
+
+      <Tab.Navigator>
+        <Tab.Screen name="Accueil" component={HomeScreen} />
+        <Tab.Screen
+          name="CurrentWeather"
+          component={CurrentWeatherScreen}
+        />         
+      </Tab.Navigator>
+    </NavigationContainer>*/
+  );
+};
+
+export default App;
+
+
+
+
+
+
+
+/*import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, ImageBackground } from 'react-native';
 import * as Location from 'expo-location';
@@ -6,10 +51,37 @@ import axios from 'axios';
 import CurrentWeather from './components/CurrentWeather';
 import ForecastWeather from './components/ForecastWeather';
 import SearchBar from './components/SearchBar';
+import ScreenHome from './components/ScreenHome';
 
-const API_KEY = 'd6def4924ad5f9a9b59f3ae895b234cb';
+/*const API_KEY = 'd6def4924ad5f9a9b59f3ae895b234cb';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from './components/HomeScreen';
+import RainForecastScreen from './components/RainForecastScreen';
+import SearchScreen from './components/SearchScreen';
+import HelloWorld from './components/HelloWorld';
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
+  return (
+    
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Accueil" component={HelloWorld} />        
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+
+
+
+
+
+
+
+/*export default function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState([]);
   const [errorMsg, setErrorMsg] = useState(null);
@@ -104,11 +176,34 @@ export default function App() {
   }, []);
 
   return (
+<ImageBackground
+      source={require('./assets/background.jpg')}
+      style={styles.background}
+      resizeMode="cover"
+    >   
+      <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Météo" component={ScreenHome} />           
+      </Tab.Navigator>
+    </NavigationContainer>
+
+</ImageBackground>
+      
+
+
+
+   
+    
+
+
+  )
+/*
+  return (
     <ImageBackground
       source={require('./assets/background.jpg')}
       style={styles.background}
       resizeMode="cover"
-    >
+    >      
       <View style={styles.container}>
         <SearchBar onSearch={(city) => handleCitySearch(city)} />
         <View style={styles.CurrentWeatherContainer}>
@@ -121,9 +216,9 @@ export default function App() {
       </View>
     </ImageBackground>
   );
-}
+}*/
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
   container: {
     padding: 50,
     flex: 1,
@@ -140,4 +235,4 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     alignItems: 'center',
   },
-});
+});*/
