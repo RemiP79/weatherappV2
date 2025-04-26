@@ -34,7 +34,7 @@ const CurrentWeatherScreen = ({ route }) => {
           }
         );
         console.log("Mise à jour des données météo");
-        console.log(response.data);
+        //console.log(response.data);
         setWeatherData(response.data);
       } catch (error) {
         console.error(

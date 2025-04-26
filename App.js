@@ -2,36 +2,28 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import * as Location from 'expo-location';
-import axios from 'axios';
 import HomeScreen from './components/HomeScreen'; // Assurez-vous que le chemin est correct
 import CurrentWeatherScreen from './components/CurrentWeatherScreen'; // Assurez-vous que le chemin est correct
-//import RainForecastScreen from './components/RainForecastScreen';
-//import BurgerMenu from './components/BurgerMenu';
-import { Provider as PaperProvider } from 'react-native-paper';
-import BurgerMenu from './components/BurgerMenu'; // Composant du menu burger
-
+import SearchBar from './components/SearchBar';
+import SearchScreen from './components/SearchScreen';
 
 const Tab = createBottomTabNavigator();
 
 const App = () => {
 
 
-  return (
-    <PaperProvider>
-    <BurgerMenu />
-  </PaperProvider>
+  return (    
       
-    /*<NavigationContainer>
-
-      <Tab.Navigator>
-        <Tab.Screen name="Accueil" component={HomeScreen} />
+    <NavigationContainer>
+      <Tab.Navigator>        
         <Tab.Screen
           name="CurrentWeather"
           component={CurrentWeatherScreen}
         />         
+        <Tab.Screen name="Accueil" component={HomeScreen} />
+        <Tab.Screen name="chercher ma ville" component={SearchScreen} />
       </Tab.Navigator>
-    </NavigationContainer>*/
+    </NavigationContainer>
   );
 };
 
