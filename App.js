@@ -1,4 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons'; // ✅ Utilisation des icônes
+
+import CurrentWeatherScreen from './components/CurrentWeatherScreen';
+import SearchScreen from './components/SearchScreen';
+import RainForecastScreen from './components/RainForecastScreen';
+
+const Tab = createBottomTabNavigator();
+
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            // Choix des icônes selon les écrans
+            if (route.name === 'Accueil') {
+              iconName = focused ? 'home' : 'home-outline';
+            } else if (route.name === 'chercher ma ville') {
+              iconName = focused ? 'search' : 'search-outline';
+            } else if (route.name === 'Prévisions de pluie') {
+              iconName = focused ? 'rainy' : 'rainy-outline';
+            }
+
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: '#1e90ff',
+          tabBarInactiveTintColor: 'gray',
+        })}
+      >
+        <Tab.Screen name="Accueil" component={CurrentWeatherScreen} />
+        <Tab.Screen name="chercher ma ville" component={SearchScreen} />
+        <Tab.Screen name="Prévisions de pluie" component={RainForecastScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default App;
+
+
+
+/*import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './components/HomeScreen'; 
@@ -27,7 +73,7 @@ const App = () => {
   );
 };
 
-export default App;
+export default App;*/
 
 
 
