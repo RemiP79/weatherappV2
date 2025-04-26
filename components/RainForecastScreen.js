@@ -31,7 +31,7 @@ export default function RainForecastScreen() {
       <div id="map"></div>
       <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
       <script>
-        const map = L.map('map').setView([46.6, 2.2], 6);
+        const map = L.map('map').setView([46.6, 2.2], 5);
         
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '',
