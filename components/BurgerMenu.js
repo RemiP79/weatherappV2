@@ -20,7 +20,7 @@ const BurgerMenu = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={toggleMenu}>
-        <Ionicons name="menu" size={30} color="black" />
+        <Ionicons name="menu" size={30} color="#FF8C00" />
       </TouchableOpacity>
       {menuVisible && (
         <View style={styles.menu}>
@@ -41,19 +41,21 @@ const BurgerMenu = () => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'grey',
     position: 'absolute',
-    top: 10,
+    top: 5,    
     left: 20,
     zIndex: 1000,
   },
   menu: {
     marginTop: 10,
-    backgroundColor: '#eee',
+    backgroundColor: 'grey',
     borderRadius: 6,
     padding: 10,
     elevation: 5,
   },
   menuItem: {
+    color: 'white',
     paddingVertical: 5,
     fontSize: 16,
   },

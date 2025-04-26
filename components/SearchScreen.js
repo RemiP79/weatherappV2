@@ -64,7 +64,7 @@ const SearchScreen = () => {
         {weatherData ? (
           <CurrentWeather data={weatherData} />
         ) : (
-          <Text style={styles.loadingText}>Chargement des données météo...</Text>
+          <Text style={styles.loadingText}>Attente des données météo...</Text>
         )}
 
         {lastSearches.length > 0 && (

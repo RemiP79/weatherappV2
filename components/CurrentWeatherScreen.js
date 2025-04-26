@@ -71,7 +71,7 @@ const CurrentWeatherScreen = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f5fcff",
+    backgroundColor: "#transparent",
   },
   burgerWrapper: {
     paddingTop: height * 0.06, // 6% de la hauteur
