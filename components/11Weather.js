@@ -1,17 +1,17 @@
-import React from 'react';
+/*import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ShowIcon from './ShowIcon'; // Assurez-vous que le chemin vers ShowIcon est correct
 
 const Weather = ({ time, icon, temperature }) => {
   return (
     <View style={styles.container}>
-      {/* Affichage de l'heure */}
+      
       <Text style={styles.time}>{time}</Text>
 
-      {/* Affichage de l'icône météo */}
+      
       <ShowIcon icon={icon} resolution="4x" size={80}/>
 
-      {/* Affichage de la température */}
+      
       <Text style={styles.temperature}>{`${temperature}°C`}</Text>
     </View>
   );
@@ -40,3 +40,4 @@ const styles = StyleSheet.create({
 });
 
 export default Weather;
+*/

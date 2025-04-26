@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+/*import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import Weather from './Weather'; // Assurez-vous que le chemin vers Weather est correct
 
@@ -40,14 +40,14 @@ const ForecastWeather = ({ data }) => {
     <ScrollView horizontal style={styles.container}>
       {groupedForecasts.map((group, index) => (
         <View key={index} style={styles.dayContainer}>
-          {/* Afficher le jour */}
+          
           <Text style={styles.dayLabel}>
             {new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }).format(
               new Date(group.day)
             )}
           </Text>
 
-          {/* Afficher les prévisions horaires pour ce jour */}
+          
           <ScrollView horizontal>
             {group.forecasts.map((forecast, idx) => (
               <Weather
